@@ -27,7 +27,7 @@ using namespace std;
 //	obj.insert_end(89);
 //	cout<<obj.head->data;
 //}
-//--------------------------------
+//--------------------------------------------------------------
  class Node{
  	public:
  		int data;
@@ -44,6 +44,10 @@ using namespace std;
  		head=NULL;
 	 }
 	 void traversal(){
+	 	if(head==NULL){
+	 		cout<<"No data to Traversal";
+	 		return;
+		 }
 	 	Node *temp=head;
 	 	while(temp!=NULL){
 	 		cout<<temp->data<<" ";
@@ -62,6 +66,23 @@ using namespace std;
 			 temp->next=new Node(d);
 		 }
 	 }
+	 void delete_end(){
+	 	if(head==NULL){
+	 		cout<<"No data to delete";
+	 		return;
+		 }
+	 	Node *temp=head;
+	 	if(temp->next==NULL){
+	 		delete(temp);
+	 		head=NULL;
+	 		return;
+		 }
+	 	while(temp->next->next!=NULL){
+	 		temp=temp->next;
+		 }
+		 delete(temp->next);
+		 temp->next=NULL;
+	 }
  };
  int main(){
  	Linkedlist obj;
@@ -73,6 +94,15 @@ using namespace std;
  	obj.insert_end(70);
  	obj.insert_end(50);
  	obj.insert_end(90);
+ 	obj.delete_end();
+ 	obj.delete_end();
+ 	obj.delete_end();
+ 	obj.delete_end();
+ 	obj.delete_end();
+ 	obj.delete_end();
+ 	obj.delete_end();
+ 	obj.delete_end();
+ 	obj.delete_end();
  	obj.traversal();
 // 	cout<<obj.head->next->data;
  }
