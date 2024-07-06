@@ -83,6 +83,32 @@ using namespace std;
 		 delete(temp->next);
 		 temp->next=NULL;
 	 }
+	 
+	void insert_f(int d){
+	 	if(head==NULL){
+	 		head=new Node(d);
+		 }
+		else{
+		   Node *temp;
+		   temp=new Node(d);
+		   temp->next=head;
+		   head=temp;
+		 }
+	 }
+	 
+	 void delete_frant(){
+	 	if(head==NULL){
+	 		cout<<"No data to delete";
+	 		return;
+		 }
+	 	else{
+	 		 Node *temp=head;
+	 		 head=head->next;
+	 		delete(temp);	
+		 }	 
+	 }
+	 
+	 
  };
  int main(){
  	Linkedlist obj;
@@ -94,15 +120,19 @@ using namespace std;
  	obj.insert_end(70);
  	obj.insert_end(50);
  	obj.insert_end(90);
- 	obj.delete_end();
- 	obj.delete_end();
- 	obj.delete_end();
- 	obj.delete_end();
- 	obj.delete_end();
- 	obj.delete_end();
- 	obj.delete_end();
- 	obj.delete_end();
- 	obj.delete_end();
+// 	obj.delete_end();
+// 	obj.delete_end();
+// 	obj.delete_end();
+// 	obj.delete_end();
+// 	obj.delete_end();
+// 	obj.delete_end();
+// 	obj.delete_end();
+// 	obj.delete_end();
+//obj.delete_end();
+    obj.insert_f(121);
+	obj.delete_frant();
  	obj.traversal();
-// 	cout<<obj.head->next->data;
- }
+ 	cout<<obj.head->next->data;
+ } 
+ //---------------------------------------------------------------------------
+
