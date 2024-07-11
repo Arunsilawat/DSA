@@ -107,7 +107,18 @@ using namespace std;
 	 		delete(temp);	
 		 }	 
 	 }
-	 
+	 void insert_random(int d,int pos){
+			 Node *temp=head;
+			 int count=2;
+			 while(temp->next!=NULL && count<pos){
+			 	
+			 	temp=temp->next;
+			 	count++; 
+			 }
+			 Node *temp2=temp->next;
+			 temp->next=new Node(d);
+			 temp->next->next=temp2;
+		}
 	 
  };
  int main(){
@@ -131,6 +142,7 @@ using namespace std;
 //obj.delete_end();
     obj.insert_f(121);
 	obj.delete_frant();
+	obj.insert_random(111,3);
  	obj.traversal();
  	cout<<obj.head->next->data;
  } 

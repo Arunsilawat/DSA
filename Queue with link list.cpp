@@ -31,17 +31,30 @@ class Queue{
 	}
 	void dqueue(int d){
 		if(frant==NULL && rear==NULL){
-		
-		
+			cout<<"No data to delete";
+	 		return;
 		}
 		else{
-			Node *temp=new Node(d);
-			rear->next=temp;
-			rear=temp;
+			Node *temp=frant;
+			frant=frant->next;
+			delete(temp);
 		}
 	}
+	 void traversal(){
+	 	if(frant==NULL && rear==NULL){
+			cout<<"No data to print";
+	 		return;
+		}
+	 	Node *temp=frant;
+	 	while(frant!=NULL){
+	 		cout<<temp->data<<" ";
+	 		temp=temp->next;
+		 }
+	 }
 };
 int main(){
 	Queue obj;
 	obj.enqueue(88);
+	obj.enqueue(18);
+	obj.traversal();
 }
