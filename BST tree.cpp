@@ -27,6 +27,7 @@ class BST{
 		else{
 			Node *temp=root,*previous;
 			while(temp!=NULL){
+				previous=temp;
 				if(d>temp->data){
 				  temp=temp->right;
 				}

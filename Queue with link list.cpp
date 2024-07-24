@@ -30,23 +30,24 @@ class Queue{
 		}
 	}
 	void dqueue(int d){
-		if(frant==NULL && rear==NULL){
-			cout<<"No data to delete";
-	 		return;
-		}
+//		if(frant==NULL && rear==NULL){
+//			cout<<"No data to delete";
+//	 		return;
+//		}
 		else{
 			Node *temp=frant;
 			frant=frant->next;
 			delete(temp);
+			return ;
 		}
 	}
 	 void traversal(){
-	 	if(frant==NULL && rear==NULL){
-			cout<<"No data to print";
-	 		return;
-		}
+//	 	if(frant==NULL && rear==NULL){
+//			cout<<"No data to print";
+//	 		return;
+//		}
 	 	Node *temp=frant;
-	 	while(frant!=NULL){
+	 	while(temp!=NULL){
 	 		cout<<temp->data<<" ";
 	 		temp=temp->next;
 		 }

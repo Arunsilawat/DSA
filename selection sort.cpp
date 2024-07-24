@@ -17,6 +17,7 @@ void selection(int a[],int n){
 		}
 	}
 }
+
 void print(int A[],int n){
 	for(int i=0;i<n;i++){
 		cout<<A[i]<<" ";
